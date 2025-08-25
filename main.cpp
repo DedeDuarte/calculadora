@@ -9,6 +9,10 @@ int main(int argc, char *argv[]) {
     ll->addLast("Naoto", 20);
     ll->addIndex(2, "Lucas", 20);
 
+    // ll->popFirst();
+    // ll ->popLast();
+    ll->popIndex(1);
+
     std::cout << ll->toString() << std::endl;
 
     return 0;

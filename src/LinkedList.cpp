@@ -94,6 +94,40 @@ void LinkedList::addIndex(int index, std::string name, int age) {
     this->sizeList++;
 }
 
+    void LinkedList::popFirst() {
+        Node* current = this->first->popNode();
+        this->setFirst(current->getNext());
+
+        if (current == this->last) this->last = nullptr;
+
+        delete current;
+    }
+
+    void LinkedList::popLast() {
+        Node* current = this->last->popNode();
+        this->setLast(current->getPrev());
+
+        if (current == this->first) this->first = nullptr;
+
+        delete current; 
+    }
+
+    void LinkedList::popIndex(int index) {
+        Node* current = this->first;
+
+        for (int i = 0; i < index; i++) {
+            current = current->getNext();
+            if (current == nullptr) throw std::runtime_error("Index out of bound.");
+        }
+
+        current->popNode();
+
+        if (current == this->first) this->first = nullptr;
+        if (current == this->last) this->last = nullptr;
+
+        delete current;
+    }
+
 Node* LinkedList::getFirst() {
     return this->first;
 }

@@ -19,6 +19,8 @@ public:
     void setNext(Node* next);
     void setPrev(Node* prev);
 
+    Node* popNode();
+
     Node* getNext();
     Node* getPrev();
     std::string getName();

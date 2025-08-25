@@ -34,6 +34,12 @@ void Node::setPrev(Node* prev) {
     this->prev = prev;
 }
 
+Node* Node::popNode() {
+    if (this->prev != nullptr) this->prev->setNext(this->next);
+    if (this->next != nullptr) this->next->setPrev(this->prev);
+    return this;
+}
+
 Node* Node::getNext() {
     return this->next;
 }

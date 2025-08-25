@@ -20,6 +20,10 @@ public:
     void addLast(std::string name, int age);
     void addIndex(int index, std::string name, int age);
 
+    void popFirst();
+    void popLast();
+    void popIndex(int index);
+
     Node* getFirst();
     Node* getLast();
     Node* getIndex(int index);
