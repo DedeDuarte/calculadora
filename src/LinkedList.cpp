@@ -122,8 +122,8 @@ void LinkedList::addIndex(int index, std::string name, int age) {
 
         current->popNode();
 
-        if (current == this->first) this->first = nullptr;
-        if (current == this->last) this->last = nullptr;
+        if (current == this->first) this->first = this->first->getNext();
+        if (current == this->last)  this->last  = this->last->getPrev();
 
         delete current;
     }
